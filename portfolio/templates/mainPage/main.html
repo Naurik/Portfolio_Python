@@ -1,0 +1,530 @@
+{% extends "mainPage/baseMain.html" %}
+{% load static %}
+
+
+{% block content %}
+	<!-- Header -->
+
+	<!-- Authorization and Registration -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+      			<div class="modal-header">
+        			<h5 class="modal-title" id="exampleModalLabel">SignUp</h5>
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          				<span aria-hidden="true">&times;</span>
+        			</button>
+      			</div>
+      			<div class="modal-body">
+					<div class="top-bar">
+    					<section class="top-bar-section">
+        					<ul class="right">
+            					{% if username %}
+                				<li><a href="/auth/logout/">Выйти ({{ username }})</a></li>
+								{% endif %}
+        					</ul>
+   						 </section>
+					</div>
+					{% block login %}
+					{% endblock %}
+				</div>
+      			<div class="modal-footer">
+        			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        			<button type="button" class="btn btn-primary">OK</button>
+      			</div>
+    		</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+      			<div class="modal-header">
+        			<h5 class="modal-title" id="exampleModalLabel1">SignIn</h5>
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          				<span aria-hidden="true">&times;</span>
+        			</button>
+      			</div>
+      			<div class="modal-body">
+					{% block register %}
+					{% endblock %}
+				</div>
+      			<div class="modal-footer">
+        			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        			<button type="button" class="btn btn-primary">OK</button>
+      			</div>
+    		</div>
+		</div>
+	</div>
+	<!--Authorization and Registration -->
+
+	<div class="agileheaderw3ls" id="agilehomewthree">
+		<!-- Navigation -->
+		<section class="cd-section">
+			<a class="cd-bouncy-nav-trigger" href="#0">MENU</a>
+		</section>
+		<div class="cd-bouncy-nav-modal">
+			<nav>
+				<ul class="cd-bouncy-nav">
+					<li><a class="scroll" href="#agilehomewthree">HOME</a></li>
+					<li><a class="scroll" href="#agileaboutaitsabout">ABOUT</a></li>
+					<li><a class="scroll" href="#portfolio">PROJECTS</a></li>
+					<li><a class="scroll" href="#contact">CONTACT</a></li>
+					<li><a class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">LOGIN</a></li>
+				</ul>
+			</nav>
+			<a href="#0" class="cd-close">Close modal</a>
+		</div>
+		<!-- //Navigation -->
+
+		<!-- Slider -->
+		<div class="w3slideraits">
+			<div class="camera_wrap w3layouts agileits camera_magenta_skin" id="camera_wrap_2">
+				<div data-src="{% static 'projectStatic/images/firstImg.jpg' %}" class="w3layouts agileits">
+					<div class="camera_caption w3layouts agileits fadeFromBottom">
+						<h3 class="w3layouts agileits">Hello, I am Mashimov Nauryzbay.</h3>
+					</div>
+				</div>
+				<div class="w3layouts agileits" data-src="{% static 'projectStatic/images/secondImg.jpg' %}">
+					<div class="camera_caption w3layouts agileits fadeFromBottom">
+						<h3 class="w3layouts agileits">I am a Programmer</h3>
+					</div>
+				</div>
+				<div data-src="{% static 'projectStatic/images/thirdImg.jpg' %}" class="w3layouts agileits">
+					<div class="camera_caption w3layouts agileits fadeFromBottom">
+						<h3 class="w3layouts agileits">Check Out My Portfolio Below</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //Slider -->
+
+	</div>
+	<!-- //Header -->
+
+
+
+	<!-- About -->
+	<div class="agileaboutaitsabout" id="agileaboutaitsabout">
+		<div class="agileaboutaits">
+			<div class="container">
+
+				<div class="col-md-6 col-sm-6 agileaboutaits-grid agileaboutaits-info">
+					<h1>About Me</h1>
+					<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation lamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</P>
+					<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">READ MORE<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+				</div>
+
+				<div class="col-md-6 col-sm-6 agileaboutaits-grid agileaboutaits-image">
+					<div class="agileaboutaits-image-2">
+						<img src="{% static 'projectStatic/images/aboutMe2.jpeg' %}" alt="Couture">
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+
+				<!-- Tooltip -->
+				<div class="tooltip-content">
+
+					<div class="modal fade features-modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h4 class="modal-title">Mashimov Nauryzbay</h4>
+								</div>
+								<div class="modal-body">
+									<img src="{% static 'projectStatic/images/aboutMe1.jpeg' %}" alt="Hitech Info">
+									<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- //Tooltip -->
+
+			</div>
+		</div>
+	</div>
+	<!-- //About -->
+
+
+	<!-- Portfolio -->
+	<div class="portfolio" id="portfolio">
+		<h3>Portfolio</h3>
+
+		<div class="tabs tabs-style-bar">
+			<nav>
+				<ul>
+					<li><a href="#section-bar-1" class="icon icon-box"><span>C#</span></a></li>
+					<li><a href="#section-bar-2" class="icon icon-display"><span>JavaScript</span></a></li>
+					<li><a href="#section-bar-3" class="icon icon-upload"><span>PHP</span></a></li>
+					<li><a href="#section-bar-4" class="icon icon-tools"><span>Unity3D</span></a></li>
+					<li><a href="#section-bar-5" class="icon icon-tools"><span>Python</span></a></li>
+				</ul>
+			</nav>
+
+	{% for projects in project%}
+			<div class="content-wrap">
+
+				<!-- Tab-1 -->
+				{% if projects.nameProject == 'c#' %}
+				<section id="section-bar-1" class="agileits w3layouts">
+					<h4>{{projects.nameProject}}</h4>
+					<div class="gallery-grids">
+						<div class="col-md-4 col-sm-4 gallery-top">
+							<a href="{{ projects.urlProject}}" class="swipebox">
+								<figure class="effect-bubba">
+									<img src="{% static 'projectStatic/images/c#.jpg' %}" alt="" class="img-responsive">
+									<figcaption>
+										<h4>Program</h4>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 gallery-top">
+							<a href="{{projects.urlProject}}" class="swipebox">
+								<figure class="effect-bubba">
+									<img src="{% static 'projectStatic/images/c#.jpg' %}" alt="" class="img-responsive">
+									<figcaption>
+										<h4>Program</h4>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 gallery-top">
+							<a href="{{projects.urlProject}}" class="swipebox">
+								<figure class="effect-bubba">
+									<img src="{% static 'projectStatic/images/c#.jpg' %}" alt="" class="img-responsive">
+									<figcaption>
+										<h4>Program</h4>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</section>
+				{% endif %}
+				<!-- //Tab-1 -->
+
+				<!-- Tab-2 -->
+				{% if projects.nameProject == 'JS'%}
+				<section id="section-bar-2" class="agileits w3layouts">
+					<h4>{{projects.nameProject}}</h4>
+					<div class="gallery-grids">
+						<div class="col-md-4 col-sm-4 gallery-top">
+							<a href="{{projects.urlProject}}" class="swipebox">
+								<figure class="effect-bubba">
+									<img src="{% static 'projectStatic/images/js.jpg' %}" alt="" class="img-responsive">
+									<figcaption>
+										<h4>Program</h4>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 gallery-top">
+							<a href="{{projects.urlProject}}" class="swipebox">
+								<figure class="effect-bubba">
+									<img src="{% static 'projectStatic/images/js.jpg' %}" alt="" class="img-responsive">
+									<figcaption>
+										<h4>Program</h4>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 gallery-top">
+							<a href="{{projects.urlProject}}" class="swipebox">
+								<figure class="effect-bubba">
+									<img src="{% static 'projectStatic/images/js.jpg' %}" alt="" class="img-responsive">
+									<figcaption>
+										<h4>Program</h4>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</section>
+				{% endif %}
+				<!-- //Tab-2 -->
+
+				<!-- Tab-3 -->
+				{% if projects.nameProject == 'PhP' %}
+				<section id="section-bar-3" class="agileits w3layouts">
+					<h4>{{projects.nameProject}}</h4>
+					<div class="gallery-grids">
+						<div class="col-md-4 col-sm-4 gallery-top">
+							<a href="{{projects.urlProject}}" class="swipebox">
+								<figure class="effect-bubba">
+									<img src="{% static 'projectStatic/images/php.jpg' %}" alt="" class="img-responsive">
+									<figcaption>
+										<h4>Program</h4>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 gallery-top">
+							<a href="{{projects.urlProject}}" class="swipebox">
+								<figure class="effect-bubba">
+									<img src="{% static 'projectStatic/images/php.jpg' %}" alt="" class="img-responsive">
+									<figcaption>
+										<h4>Program</h4>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 gallery-top">
+							<a href="{{projects.urlProject}}" class="swipebox">
+								<figure class="effect-bubba">
+									<img src="{% static 'projectStatic/images/php.jpg' %}" alt="" class="img-responsive">
+									<figcaption>
+										<h4>Program</h4>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</section>
+				{% endif %}
+				<!-- //Tab-3 -->
+
+				<!-- Tab-4 -->
+				{% if projects.nameProject == 'Unity3D'%}
+				<section id="section-bar-4" class="agileits w3layouts">
+					<h4>{{projects.nameProject}}</h4>
+					<div class="gallery-grids">
+						<div class="col-md-4 col-sm-4 gallery-top">
+							<a href="{{projects.urlProject}}" class="swipebox">
+								<figure class="effect-bubba">
+									<img src="{% static 'projectStatic/images/unity.jpg' %}" alt="" class="img-responsive">
+									<figcaption>
+										<h4>Program</h4>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 gallery-top">
+							<a href="{{projects.urlProject}}" class="swipebox">
+								<figure class="effect-bubba">
+									<img src="{% static 'projectStatic/images/unity.jpg' %}" alt="" class="img-responsive">
+									<figcaption>
+										<h4>Program</h4>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 gallery-top">
+							<a href="{{projects.urlProject}}" class="swipebox">
+								<figure class="effect-bubba">
+									<img src="{% static 'projectStatic/images/unity.jpg' %}" alt="" class="img-responsive">
+									<figcaption>
+										<h4>Program</h4>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</section>
+				{% endif %}
+				<!-- //Tab-4 -->
+
+				<!-- Tab-5 -->
+				{% if projects.nameProject == 'Python' %}
+				<section id="section-bar-5" class="agileits w3layouts">
+					<h4>{{projects.nameProject}}</h4>
+					<div class="gallery-grids">
+						<div class="col-md-4 col-sm-4 gallery-top">
+							<a href="{{projects.urlProject}}" class="swipebox">
+								<figure class="effect-bubba">
+									<img src="{% static 'projectStatic/images/python.png' %}" alt="" class="img-responsive">
+									<figcaption>
+										<h4>Program</h4>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 gallery-top">
+							<a href="{{projects.urlProject}}" class="swipebox">
+								<figure class="effect-bubba">
+									<img src="{% static 'projectStatic/images/python.png' %}" alt="" class="img-responsive">
+									<figcaption>
+										<h4>Program</h4>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 gallery-top">
+							<a href="{{projects.urlProject}}" class="swipebox">
+								<figure class="effect-bubba">
+									<img src="{% static 'projectStatic/images/python.png' %}" alt="" class="img-responsive">
+									<figcaption>
+										<h4>Program</h4>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</section>
+				<!-- //Tab-5 -->
+				{% endif %}
+			</div><!-- //Content -->
+			{% endfor %}
+		</div><!-- //Tabs -->
+	</div>
+	<!-- //Portfolio -->
+
+
+	<!-- Booking -->
+	<div class="w3layoutsbooking" id="contact">
+		<div class="container">
+
+			<h3>Book Your Project--Sorry, doesn't work</h3>
+
+			{% block article %}
+
+			{% endblock %}
+
+		</div>
+	</div>
+	<!-- //Booking -->
+
+
+
+	<!-- Footer -->
+	<div class="footer">
+		<div class="container">
+
+			<h3>Drop Me a Line</h3>
+			<div class="footer-grids">
+
+				<div class="col-md-3 col-sm-3 footer-grid footer-grid-1 address">
+					<h4>Address</h4>
+					<address>
+						<ul>
+							<li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> The Republic of Kazakhstan</li>
+							<li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Astana</li>
+						</ul>
+					</address>
+				</div>
+
+				<div class="col-md-2 col-sm-2 footer-grid footer-grid-2 phone">
+					<h4>Phone</h4>
+					<p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> +7 (707) 200-39-66</p>
+				</div>
+
+				<div class="col-md-2 col-sm-2 footer-grid footer-grid-3 email">
+					<h4>Email</h4>
+					<p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <a href="mailto:nauzik@mail.ru"> nauzik@mail.ru</a></p>
+				</div>
+
+				<!-- Newsletter -->
+				<div class="col-md-5 col-sm-5 footer-grid footer-grid-4 newsletter">
+					<h4>Newsletter</h4>
+					<form action="#" method="post">
+						<input type="text" placeholder="Email" name="Email" required="">
+						<input type="submit" value="SUBSCRIBE">
+					</form>
+				</div>
+				<!-- //Newsletter -->
+				<div class="clearfix"></div>
+
+			</div>
+
+			<!-- Copyright -->
+			<div class="copyright">
+				<p>&copy; 2020 Programmer Portfolio. All Rights Reserved </a>
+				<a href="#agilehomewthree" class="to-top scroll" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a></p>
+			</div>
+			<!-- //Copyright -->
+
+		</div>
+	</div>
+	<!-- //Footer -->
+
+
+
+	<!-- Custom-JavaScript-File-Links -->
+
+		<!-- Default-JavaScript -->   <script type="text/javascript" src="{% static 'projectStatic/js/jquery.min.js' %}"></script>
+		<!-- Bootstrap-JavaScript --> <script type="text/javascript" src="{% static 'projectStatic/js/bootstrap.min.js' %}"></script>
+
+		<!-- Slider-JavaScript-Files -->
+			<script type="text/javascript" src="{% static 'projectStatic/js/jquery.easing.1.3.js' %}"></script>
+			<script type="text/javascript" src="{% static 'projectStatic/js/jquery.mobile.customized.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'projectStatic/js/camera.js' %}"></script>
+			<script>
+				jQuery(function(){
+					jQuery('#camera_wrap_2').camera({
+						loader: 'bar',
+						speed: 500,
+						pagination: false,
+						thumbnails: false,
+					});
+				});
+			</script>
+		<!-- //Slider-JavaScript-Files -->
+
+		<!-- Modal -->
+			<script>
+				$('#myModal').on('shown.bs.modal', function () {
+  					$('#myInput').trigger('focus')
+				})
+			</script>
+		<!-- Modal -->
+
+		<!-- Navigation-JavaScript -->
+			<script src="{% static 'projectStatic/js/nav.js' %}"></script>
+		<!-- //Navigation-JavaScript -->
+
+		<!-- Stats-Number-Scroller-Animation-JavaScript -->
+			<script src="{% static 'projectStatic/js/waypoints.min.js' %}"></script>
+			<script src="{% static 'projectStatic/js/counterup.min.js' %}"></script>
+			<script>
+				jQuery(document).ready(function( $ ) {
+					$('.counter').counterUp({
+						delay: 10,
+						time: 800
+					});
+				});
+			</script>
+		<!-- //Stats-Number-Scroller-Animation-JavaScript -->
+
+		<!-- Gallery-Tab-JavaScript -->
+			<script src="{% static 'projectStatic/js/cbpFWTabs.js' %}"></script>
+			<script>
+				(function() {
+					[].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+						new CBPFWTabs( el );
+					});
+				})();
+			</script>
+		<!-- //Gallery-Tab-JavaScript -->
+
+		<!-- Swipe-Box-JavaScript -->
+			<script src="{% static 'projectStatic/js/jquery.swipebox.min.js' %}"></script>
+				<script type="text/javascript">
+					jQuery(function($) {
+						$(".swipebox").swipebox();
+					});
+			</script>
+		<!-- //Swipe-Box-JavaScript -->
+
+		<!-- Smooth-Scrolling-JavaScript -->
+			<script type="text/javascript" src="{% static 'projectStatic/js/move-top.js' %}"></script>
+			<script type="text/javascript" src="{% static 'projectStatic/js/easing.js' %}"></script>
+			<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll, .navbar li a, .footer li a").click(function(event){
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+			</script>
+		<!-- //Smooth-Scrolling-JavaScript -->
+
+	<!-- //Custom-JavaScript-File-Links -->
+{% endblock %}
