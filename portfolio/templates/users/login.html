@@ -1,3 +1,4 @@
+{% extends 'mainPage/baseMain.html' %}
 {% extends 'mainPage/main.html' %}
 
 {% block login %}
@@ -16,7 +17,6 @@
                 <label class="error">{{ login_error }}</label>
             {% endif %}
             <button type="submit" class="btn btn-primary">Sign</button>
-            <a class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">Registration</a></li>
         </form>
     </div>
 {% endblock %}

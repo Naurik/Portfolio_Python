@@ -6,56 +6,46 @@
 	<!-- Header -->
 
 	<!-- Authorization and Registration -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-      			<div class="modal-header">
-        			<h5 class="modal-title" id="exampleModalLabel">SignUp</h5>
-        			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          				<span aria-hidden="true">&times;</span>
-        			</button>
-      			</div>
-      			<div class="modal-body">
-					<div class="top-bar">
-    					<section class="top-bar-section">
-        					<ul class="right">
-            					{% if username %}
-                				<li><a href="/auth/logout/">Выйти ({{ username }})</a></li>
-								{% endif %}
-        					</ul>
-   						 </section>
-					</div>
-					{% block login %}
-					{% endblock %}
-				</div>
-      			<div class="modal-footer">
-        			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        			<button type="button" class="btn btn-primary">OK</button>
-      			</div>
-    		</div>
-		</div>
-	</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Entry</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                <a href="#0" class="cd-close-form">Close</a>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs d-none" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#log" role="tab"
+                           aria-controls="home" aria-selected="true">LogIn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#reg" role="tab"
+                           aria-controls="profile" aria-selected="false">Registration</a>
+                    </li>
+                </ul>
 
-	<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-  		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-      			<div class="modal-header">
-        			<h5 class="modal-title" id="exampleModalLabel1">SignIn</h5>
-        			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          				<span aria-hidden="true">&times;</span>
-        			</button>
-      			</div>
-      			<div class="modal-body">
-					{% block register %}
-					{% endblock %}
-				</div>
-      			<div class="modal-footer">
-        			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        			<button type="button" class="btn btn-primary">OK</button>
-      			</div>
-    		</div>
-		</div>
-	</div>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="log" role="tabpanel" aria-labelledby="home-tab">
+						{% block login %}
+
+						{% endblock %}
+                    </div>
+                    <div class="tab-pane fade" id="reg" role="tabpanel" aria-labelledby="profile-tab">
+						{% block register %}
+
+						{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 	<!--Authorization and Registration -->
 
 	<div class="agileheaderw3ls" id="agilehomewthree">
@@ -71,6 +61,17 @@
 					<li><a class="scroll" href="#portfolio">PROJECTS</a></li>
 					<li><a class="scroll" href="#contact">CONTACT</a></li>
 					<li><a class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">LOGIN</a></li>
+					<li>
+						<div class="top-bar">
+    					<section class="top-bar-section">
+        					<ul class="right">
+            					{% if username %}
+                				<li><a href="/auth/logout/">Выйти ({{ username }})</a></li>
+								{% endif %}
+        					</ul>
+   						 </section>
+						</div>
+					</li>
 				</ul>
 			</nav>
 			<a href="#0" class="cd-close">Close modal</a>

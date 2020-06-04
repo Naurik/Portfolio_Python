@@ -14,10 +14,11 @@
 <!-- //Meta-Tags -->
 
 <!-- Custom-Stylesheet-Links -->
-<!-- Bootstrap-CSS -->  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" media="all">
-<!-- Insex-Page.CSS --> <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all">
-<!-- Slider-CSS --> 	<link rel="stylesheet" href="{% static 'css/camera.css' %}" id="camera-css" type="text/css" media="all">
-<!-- Portfolio-CSS -->	<link rel="stylesheet" href="{% static 'css/swipebox.css' %}" type="text/css" media="all">
+<!-- Bootstrap-CSS -->  <link rel="stylesheet" href="{% static 'projectStatic/css/bootstrap.min.css' %}" type="text/css" media="all">
+<!-- Insex-Page.CSS --> <link rel="stylesheet" href="{% static 'projectStatic/css/style.css' %}" type="text/css" media="all">
+<!-- Slider-CSS --> 	<link rel="stylesheet" href="{% static 'projectStatic/css/camera.css' %}" id="camera-css" type="text/css" media="all">
+<!-- Portfolio-CSS -->	<link rel="stylesheet" href="{% static 'projectStatic/css/swipebox.css' %}" type="text/css" media="all">
+                        <link rel="stylesheet" type="text/css" href="{% static 'userStatic/css/foundation.css' %}">
 <!-- //Custom-Stylesheet-Links -->
 
 <!-- Fonts -->
@@ -36,6 +37,11 @@
 <!-- Body -->
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
       {% block content %}
+        {% block login %}
+        {% endblock %}
+
+        {% block register %}
+        {% endblock %}
       {% endblock %}
 </body>
 <!-- //Body -->

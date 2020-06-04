@@ -16,7 +16,7 @@ def login(request):
             return redirect('/')
         else:
             args['login_error'] = "Пользователь не найден"
-            return render(request,'users/login.html')
+            return render(request, 'users/login.html')
 
     else:
         return render(request, 'users/login.html')
